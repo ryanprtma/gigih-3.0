@@ -1,0 +1,61 @@
+<html>
+<div>
+    <form action="">
+        <label for="">Email</label>
+        <input type="text" name="" id="email">
+        <label for="">Password</label>
+        <input type="text" name="" id="password">
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+</html>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        var emailInput = document.getElementById('email');
+        var email = emailInput.value;
+
+        if (email == "") {
+            event.preventDefault();
+            alert('Email cannot be empty.');
+            return;
+        }
+
+        if (email.length < 6) {
+            event.preventDefault();
+            alert('Email should be at least 6 characters long.');
+            return;
+        }
+
+        if (/[@]/.test(email) == false) {
+            event.preventDefault();
+            alert('Email should be a in email format.');
+            return;
+        }
+
+        if (/[".com"]/.test(email) == false) {
+            event.preventDefault();
+            alert('Email should be a in email format.');
+            return;
+        }
+
+        var passwordInput = document.getElementById('password');
+        var password = passwordInput.value;
+
+        if (password == "") {
+            event.preventDefault();
+            alert('Password cannot be empty.');
+            return;
+        }
+
+        if (password.length < 6) {
+            event.preventDefault();
+            alert('Password should be at least 6 characters long.');
+            return;
+        }
+
+        event.preventDefault();
+        alert("login berhasil");
+    });
+</script>
