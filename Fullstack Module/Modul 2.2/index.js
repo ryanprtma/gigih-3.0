@@ -7,9 +7,9 @@ app.use(express.json());
 
 // Sample data - initial playlist
 let playlist = [
-    { id: 1, title: 'Song 1', artist: 'Artist 1' },
-    { id: 2, title: 'Song 2', artist: 'Artist 2' },
-    { id: 3, title: 'Song 3', artist: 'Artist 3' }
+    { id: 1, title: 'Song 1', artists: ['Artist 1', 'Artist 2'] },
+    { id: 2, title: 'Song 2', artists: ['Artist 1', 'Artist 2'] },
+    { id: 3, title: 'Song 3', artists: ['Artist 1', 'Artist 2'] }
 ];
 
 // GET /api/playlist - Get all songs in the playlist
@@ -18,18 +18,11 @@ app.get('/api/playlist', (req, res) => {
 });
 
 app.get('/api/playlist/play', (req, res) => {
-    waitSong = (title) => {
-        return new Promise((resolve) => {
-            setTimeout(resolve(`now play ${title}`), 5000);
-        });
-    }
-
+    const playedSong = [];
     playlist.forEach(song => {
-        waitSong(song.title).then((data) => {
-            console.log(data);
-            res.json(data);
-        });
+        playedSong.push(`play song ${song.title}`);
     });
+    res.json(playedSong);
 });
 
 // GET /api/playlist/:id - Get a specific song by ID
@@ -47,10 +40,13 @@ app.get('/api/playlist/:id', (req, res) => {
 // POST /api/playlist - Add a new song to the playlist
 app.post('/api/playlist', (req, res) => {
     const { title, artist } = req.body;
-    console.log(title);
-    const newSong = { id: playlist.length + 1, title, artist };
+    const artists = [];
+    artist.forEach((item) => {
+        artists.push(item);
+    })
+    const newSong = { id: playlist.length + 1, title, artists };
     playlist.push(newSong);
-    res.status(201).json(newSong);
+    res.status(201).json('new song added');
 });
 
 // PUT /api/playlist/:id - Update a song by ID
