@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "c88454b1-eb47-484f-9ab7-2c9fa5e78966",
+		"name": "spotify-api-clone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28488362"
+	},
+	"item": [
+		{
+			"name": "Add song to playlist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"test xxx\",\n    \"artist\" : [\"artist 1xxx\", \"artist 2xxx\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/playlist",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"playlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get playlist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/playlist",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"playlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Play playlist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/playlist/play",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"playlist",
+						"play"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/songs",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get songs by most played",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/songs/sort-by-most-played",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs",
+						"sort-by-most-played"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Play song by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/song/1/play",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"song",
+						"1",
+						"play"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count played song by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/song/2/playcount",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"song",
+						"2",
+						"playcount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

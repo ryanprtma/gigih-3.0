@@ -1,0 +1,3 @@
+import spotify-api-clone.postman_collection.json to your postman app
+npm install
+npm run start-dev
