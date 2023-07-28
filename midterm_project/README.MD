@@ -345,33 +345,35 @@ This API will create a new comment for the video with the specified id.
 1. Clone this repository
 
     ```bash
-    git clone
+    git clone https://github.com/ryanprtma/gigih-3.0.git
     ```
 
-2. Install dependencies
+2. cd midterm_peoject
+
+3. Install dependencies
 
     ```bash
     npm install
     ```
 
-3. Change `.env.example` to `.env`
+4. Change `.env.example` to `.env`
  
 
-4. Open `.env` file and put your database connection url as follows:
+5. Open `.env` file and put your database connection url as follows:
 
     ```bash
     mongodb://localhost:27017/tokopedia_play
     ```
 
-5. Run seedeer file
+7. Run seedeer file
      ```bash
     node seed.js
     ```
 
-6. Run the server
+7. Run the server
 
     ```bash
     npm start
     ```
 
-7. Now the server is running on port 3000. So you can access it via `http://127.0.0.1:3000` or `http://localhost:3000`
+9. Now the server is running on port 3000. So you can access it via `http://127.0.0.1:3000` or `http://localhost:3000`
