@@ -8,7 +8,7 @@ const getAllSongs = () => {
 function playSong(id) {
     playlists = playlist.getPlaylist();
     const song = playlists.find(song => song.id === id);
-    song.countPlayedSong += 1;
+    song.playCount += 1;
     return song;
 }
 
